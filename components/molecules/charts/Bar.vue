@@ -1,5 +1,5 @@
 <template>
-  <Doughnut
+  <Bar
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
@@ -13,62 +13,77 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs/legacy'
+import { Bar } from 'vue-chartjs/legacy'
 
 import {
   Chart as ChartJS,
   Title,
   Tooltip,
   Legend,
-  ArcElement,
-  CategoryScale
+  BarElement,
+  CategoryScale,
+  LinearScale,
 } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
-  name: 'DoughnutChart',
+  name: 'BarChart',
   components: {
-    Doughnut
+    Bar,
   },
   props: {
     chartId: {
       type: String,
-      default: 'doughnut-chart'
+      default: 'bar-chart',
     },
     datasetIdKey: {
       type: String,
-      default: 'label'
+      default: 'label',
     },
     width: {
       type: Number,
-      default: 400
+      default: 400,
     },
     height: {
       type: Number,
-      default: 400
+      default: 400,
     },
     cssClasses: {
       default: '',
-      type: String
+      type: String,
     },
     styles: {
       type: Object,
-      default: () => {}
+      default: () => {},
     },
     plugins: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     chartData: {
       type: Object,
       default: () => ({
-        labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
+        labels: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ],
         datasets: [
           {
-            backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-            data: [40, 20, 80, 10],
-          },
+            label: 'Data One',
+            backgroundColor: '#f87979',
+            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11],
+          }
         ],
       }),
     },

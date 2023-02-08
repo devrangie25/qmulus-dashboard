@@ -1,5 +1,5 @@
 <template>
-  <Doughnut
+  <Pie
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs/legacy'
+import { Pie } from 'vue-chartjs/legacy'
 
 import {
   Chart as ChartJS,
@@ -21,44 +21,44 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-  CategoryScale
+  CategoryScale,
 } from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
 export default {
-  name: 'DoughnutChart',
+  name: 'PieChart',
   components: {
-    Doughnut
+    Pie,
   },
   props: {
     chartId: {
       type: String,
-      default: 'doughnut-chart'
+      default: 'pie-chart',
     },
     datasetIdKey: {
       type: String,
-      default: 'label'
+      default: 'label',
     },
     width: {
       type: Number,
-      default: 400
+      default: 400,
     },
     height: {
       type: Number,
-      default: 400
+      default: 400,
     },
     cssClasses: {
       default: '',
-      type: String
+      type: String,
     },
     styles: {
       type: Object,
-      default: () => {}
+      default: () => {},
     },
     plugins: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     chartData: {
       type: Object,
@@ -85,6 +85,6 @@ export default {
         },
       }),
     },
-  },
+  }
 }
 </script>

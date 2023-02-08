@@ -7,9 +7,11 @@
             <div class="font-weight-bold title">
               Hello Rangie! Welcome back.
             </div>
-            <div v-if="false" class="mt-2">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
-              veniam sunt quasi suscipit totam non reiciendis ullam.
+            <div class="mt-2">
+              Qmulus Solutions Front End Developer Assessment
+            </div>
+            <div class="mt-2">
+              NuxtJs + Bootstrap + CSS + ChartJs
             </div>
           </div>
           <div class="col-4 d-flex justify-content-center">
@@ -33,6 +35,6 @@ export default {}
 }
 
 .title {
-    font-size: 28px;
+  font-size: 28px;
 }
 </style>

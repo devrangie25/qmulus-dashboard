@@ -1,0 +1,17 @@
+[
+  {
+    "local-cpu-usage": "50",
+    "local-memory-usage": "50",
+    "local-array-hdd-storage": "50",
+    "local-upload-speed": "50",
+    "local-download-speed": "50",
+    "cloud-storage-usage": "50",
+    "ai-accuracy": "50",
+    "server-uptime-local": "50",
+    "server-online-offline-status": "50",
+    "total-mins-video-downloaded": "50",
+    "total-mins-video-archived": "50",
+    "cloud-storage-online-offline-status": "50",
+    "number-of-objects-detected": "50"
+  }
+]

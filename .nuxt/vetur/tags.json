@@ -1,0 +1,26 @@
+{
+  "CmBanner": {
+    "description": "Auto imported from components/molecules/Banner.vue"
+  },
+  "CmWidget": {
+    "description": "Auto imported from components/molecules/Widget.vue"
+  },
+  "CmChartsBar": {
+    "description": "Auto imported from components/molecules/charts/Bar.vue"
+  },
+  "CmChartsDoughnut": {
+    "description": "Auto imported from components/molecules/charts/Doughnut.vue"
+  },
+  "CmChartsLine": {
+    "description": "Auto imported from components/molecules/charts/Line.vue"
+  },
+  "CmChartsPie": {
+    "description": "Auto imported from components/molecules/charts/Pie.vue"
+  },
+  "CmFrameSideBarLeft": {
+    "description": "Auto imported from components/molecules/frame/SideBarLeft.vue"
+  },
+  "CoDashboard": {
+    "description": "Auto imported from components/organisms/Dashboard.vue"
+  }
+}

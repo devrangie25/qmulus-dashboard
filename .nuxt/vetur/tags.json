@@ -5,22 +5,31 @@
   "CmWidget": {
     "description": "Auto imported from components/molecules/Widget.vue"
   },
-  "CmChartsBar": {
-    "description": "Auto imported from components/molecules/charts/Bar.vue"
+  "CmChartjsBar": {
+    "description": "Auto imported from components/molecules/chartjs/Bar.vue"
   },
-  "CmChartsDoughnut": {
-    "description": "Auto imported from components/molecules/charts/Doughnut.vue"
+  "CmChartjsDoughnut": {
+    "description": "Auto imported from components/molecules/chartjs/Doughnut.vue"
   },
-  "CmChartsLine": {
-    "description": "Auto imported from components/molecules/charts/Line.vue"
+  "CmChartjsLine": {
+    "description": "Auto imported from components/molecules/chartjs/Line.vue"
   },
-  "CmChartsPie": {
-    "description": "Auto imported from components/molecules/charts/Pie.vue"
+  "CmChartjsPie": {
+    "description": "Auto imported from components/molecules/chartjs/Pie.vue"
+  },
+  "CmApexjsApexChartDynamic": {
+    "description": "Auto imported from components/molecules/apexjs/ApexChartDynamic.vue"
   },
   "CmFrameSideBarLeft": {
     "description": "Auto imported from components/molecules/frame/SideBarLeft.vue"
   },
-  "CoDashboard": {
-    "description": "Auto imported from components/organisms/Dashboard.vue"
+  "CmFrameApexSideBarLeft": {
+    "description": "Auto imported from components/molecules/frame/apex/SideBarLeft.vue"
+  },
+  "CoApexDashboard": {
+    "description": "Auto imported from components/organisms/apex/Dashboard.vue"
+  },
+  "CoChartjsDashboard": {
+    "description": "Auto imported from components/organisms/chartjs/Dashboard.vue"
   }
 }

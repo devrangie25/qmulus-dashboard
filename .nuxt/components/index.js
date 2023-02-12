@@ -1,11 +1,14 @@
-export const CmBanner = () => import('../../components/molecules/Banner.vue' /* webpackChunkName: "components/cm-banner" */).then(c => wrapFunctional(c.default || c))
-export const CmWidget = () => import('../../components/molecules/Widget.vue' /* webpackChunkName: "components/cm-widget" */).then(c => wrapFunctional(c.default || c))
-export const CmChartsBar = () => import('../../components/molecules/charts/Bar.vue' /* webpackChunkName: "components/cm-charts-bar" */).then(c => wrapFunctional(c.default || c))
-export const CmChartsDoughnut = () => import('../../components/molecules/charts/Doughnut.vue' /* webpackChunkName: "components/cm-charts-doughnut" */).then(c => wrapFunctional(c.default || c))
-export const CmChartsLine = () => import('../../components/molecules/charts/Line.vue' /* webpackChunkName: "components/cm-charts-line" */).then(c => wrapFunctional(c.default || c))
-export const CmChartsPie = () => import('../../components/molecules/charts/Pie.vue' /* webpackChunkName: "components/cm-charts-pie" */).then(c => wrapFunctional(c.default || c))
-export const CmFrameSideBarLeft = () => import('../../components/molecules/frame/SideBarLeft.vue' /* webpackChunkName: "components/cm-frame-side-bar-left" */).then(c => wrapFunctional(c.default || c))
-export const CoDashboard = () => import('../../components/organisms/Dashboard.vue' /* webpackChunkName: "components/co-dashboard" */).then(c => wrapFunctional(c.default || c))
+export { default as CmBanner } from '../../components/molecules/Banner.vue'
+export { default as CmWidget } from '../../components/molecules/Widget.vue'
+export { default as CmChartjsBar } from '../../components/molecules/chartjs/Bar.vue'
+export { default as CmChartjsDoughnut } from '../../components/molecules/chartjs/Doughnut.vue'
+export { default as CmChartjsLine } from '../../components/molecules/chartjs/Line.vue'
+export { default as CmChartjsPie } from '../../components/molecules/chartjs/Pie.vue'
+export { default as CmApexjsApexChartDynamic } from '../../components/molecules/apexjs/ApexChartDynamic.vue'
+export { default as CmFrameSideBarLeft } from '../../components/molecules/frame/SideBarLeft.vue'
+export { default as CmFrameApexSideBarLeft } from '../../components/molecules/frame/apex/SideBarLeft.vue'
+export { default as CoApexDashboard } from '../../components/organisms/apex/Dashboard.vue'
+export { default as CoChartjsDashboard } from '../../components/organisms/chartjs/Dashboard.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

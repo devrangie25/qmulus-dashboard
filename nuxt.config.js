@@ -26,7 +26,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/chart.js', mode: 'client' },
-    { src: '~/plugins/icons.js', mode: 'client' }
+    { src: '~/plugins/icons.js', mode: 'client' },
+    { src: '~/plugins/apex.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -57,7 +58,7 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    '@nuxtjs/dayjs'
+    '@nuxtjs/dayjs',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

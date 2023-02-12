@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <cm-charts-doughnut :height="180" :width="200" /> -->
-    <co-dashboard />
+    <co-chartjs-dashboard />
   </div>
 </template>
 

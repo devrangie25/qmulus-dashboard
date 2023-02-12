@@ -63,7 +63,7 @@
                 class="text-center card-corp"
                 style="height: 100%"
               >
-                <cm-charts-line
+                <cm-chartjs-line
                   :chartData="lineChartData"
                   :chartOptions="lineChartOptions"
                   :height="350"
@@ -77,7 +77,7 @@
                 class="text-center card-corp"
                 style="height: 100%"
               >
-                <cm-charts-bar
+                <cm-chartjs-bar
                   :chartData="barChartData"
                   :chartOptions="barChartOptions"
                   :height="350"
@@ -134,7 +134,7 @@
             class="text-center card-corp"
             style="height: 100%"
           >
-            <cm-charts-doughnut
+            <cm-chartjs-doughnut
               :chartData="doughnutChartData"
               :chartOptions="doughnutChartOptions"
               :height="300"
@@ -150,7 +150,7 @@
             class="text-center card-corp"
             style="height: 100%"
           >
-            <cm-charts-pie
+            <cm-chartjs-pie
               :chartData="pieChartData"
               :chartOptions="pieChartOptions"
               :height="300"

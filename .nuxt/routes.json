@@ -1,5 +1,12 @@
 [
   {
+    "name": "apex",
+    "path": "/apex",
+    "component": "/home/devrangie/Documents/Code/Qmulus/qmulus-dashboard/pages/apex.vue",
+    "chunkName": "pages/apex",
+    "_name": "_adde7308"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/devrangie/Documents/Code/Qmulus/qmulus-dashboard/pages/index.vue",

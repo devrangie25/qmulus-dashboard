@@ -15,5 +15,5 @@ You can directly use them in pages and other components without the need to impo
 - `<CmApexjsApexChartDynamic>` | `<cm-apexjs-apex-chart-dynamic>` (components/molecules/apexjs/ApexChartDynamic.vue)
 - `<CmFrameSideBarLeft>` | `<cm-frame-side-bar-left>` (components/molecules/frame/SideBarLeft.vue)
 - `<CmFrameApexSideBarLeft>` | `<cm-frame-apex-side-bar-left>` (components/molecules/frame/apex/SideBarLeft.vue)
-- `<CoApexDashboard>` | `<co-apex-dashboard>` (components/organisms/apex/Dashboard.vue)
 - `<CoChartjsDashboard>` | `<co-chartjs-dashboard>` (components/organisms/chartjs/Dashboard.vue)
+- `<CoApexDashboard>` | `<co-apex-dashboard>` (components/organisms/apex/Dashboard.vue)

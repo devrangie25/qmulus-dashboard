@@ -26,10 +26,10 @@
   "CmFrameApexSideBarLeft": {
     "description": "Auto imported from components/molecules/frame/apex/SideBarLeft.vue"
   },
-  "CoApexDashboard": {
-    "description": "Auto imported from components/organisms/apex/Dashboard.vue"
-  },
   "CoChartjsDashboard": {
     "description": "Auto imported from components/organisms/chartjs/Dashboard.vue"
+  },
+  "CoApexDashboard": {
+    "description": "Auto imported from components/organisms/apex/Dashboard.vue"
   }
 }

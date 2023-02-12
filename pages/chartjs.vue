@@ -1,12 +1,12 @@
 <template>
   <div>
-    <co-apex-dashboard />
+    <co-chartjs-dashboard />
   </div>
 </template>
 
 <script>
 export default {
   name: 'IndexPage',
-  layout: 'apex',
+  layout: 'default',
 }
 </script>

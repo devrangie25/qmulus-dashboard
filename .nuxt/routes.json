@@ -1,10 +1,10 @@
 [
   {
-    "name": "apex",
-    "path": "/apex",
-    "component": "/home/devrangie/Documents/Code/Qmulus/qmulus-dashboard/pages/apex.vue",
-    "chunkName": "pages/apex",
-    "_name": "_adde7308"
+    "name": "chartjs",
+    "path": "/chartjs",
+    "component": "/home/devrangie/Documents/Code/Qmulus/qmulus-dashboard/pages/chartjs.vue",
+    "chunkName": "pages/chartjs",
+    "_name": "_fed4dc86"
   },
   {
     "name": "index",

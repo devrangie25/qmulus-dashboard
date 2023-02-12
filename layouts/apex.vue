@@ -87,5 +87,6 @@ export default {
 
 .nav {
   width: 3rem;
+  text-align: center;
 }
 </style>

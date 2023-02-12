@@ -1,5 +1,26 @@
 <template>
   <div>
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <b-card text-variant="light" class="hero-card card-corp">
+          <div class="hero-title">Welcome, Rangie!</div>
+          <div> Qmulus Solutions Front End Developer Assessment </div>
+        </b-card>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <b-card
+          text-variant="white"
+          class="text-center card-corp"
+          style="height: 100%;"
+        >
+          <b-card-text class="center-text">
+            <div>
+              {{ currentTime }}
+            </div>
+          </b-card-text>
+        </b-card>
+      </div>
+    </div>
     <div class="row mb-4">
       <div class="col">
         <cm-apexjs-apex-chart-dynamic
@@ -11,7 +32,10 @@
       </div>
     </div>
     <div class="row mb-4">
-      <div class="col-lg-4">
+      <div
+        class="col-lg-4"
+        :class="['sm', 'xs', 'md'].includes(screenSize) ? 'mb-4' : ''"
+      >
         <cm-apexjs-apex-chart-dynamic
           :series="chartSeries2"
           :chartOptions="chartOptions2"
@@ -19,7 +43,10 @@
           type="bar"
         />
       </div>
-      <div class="col-lg-4">
+      <div
+        class="col-lg-4"
+        :class="['sm', 'xs', 'md'].includes(screenSize) ? 'mb-4' : ''"
+      >
         <cm-apexjs-apex-chart-dynamic
           :series="chartSeries3"
           :chartOptions="chartOptions3"
@@ -29,38 +56,45 @@
       </div>
       <div class="col-lg-4">
         <cm-apexjs-apex-chart-dynamic
+          v-if="false"
           :series="chartSeries4"
           :chartOptions="chartOptions4"
           type="radialBar"
+          :height="'315'"
         />
-        <!-- <b-card
+        <b-card
           text-variant="dark"
           class="text-center card-corp"
           style="height: 100%"
         >
-          <div class="row mt-2">
-            <div class="col-6">
+          <div class="row mt-3">
+            <div class="col-lg-6">
               <ApexCharts
+                :series="chartSeries4A"
+                :options="chartOptions4A"
                 type="radialBar"
                 :height="'280'"
-                :options="chartOptions4A"
-                :series="chartSeries4A"
-              ></ApexCharts>
+                :width="'100%'"
+              />
             </div>
-            <div class="col-6">
+            <div class="col-lg-6">
               <ApexCharts
+                :series="chartSeries4B"
+                :options="chartOptions4B"
                 type="radialBar"
                 :height="'280'"
-                :options="chartOptions4A"
-                :series="chartSeries4A"
-              ></ApexCharts>
+                :width="'100%'"
+              />
             </div>
           </div>
-        </b-card> -->
+        </b-card>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6">
+      <div
+        class="col-lg-6"
+        :class="['sm', 'xs', 'md'].includes(screenSize) ? 'mb-4' : ''"
+      >
         <cm-apexjs-apex-chart-dynamic
           type="line"
           :chartOptions="chartOptions5"
@@ -75,20 +109,25 @@
           style="height: 100%"
         >
           <div class="row">
-            <div v-for="i in 4" :key="i" class="col-lg-3">
+            <div
+              v-for="(item, i) in statuses"
+              :key="i"
+              class="col-lg-3"
+              :class="['sm', 'xs', 'md'].includes(screenSize) ? 'mb-4' : ''"
+            >
               <b-card
                 text-variant="white"
                 class="text-center widget-card"
                 style="height: 290px; width: 100%"
               >
                 <div class="widget-card-text-container">
-                  <div class="widget-card-text">12.98%</div>
+                  <div class="widget-card-text">{{ item.status }}</div>
+                  <div class="widget-card-text-subtitle">{{ item.title }}</div>
                 </div>
               </b-card>
             </div>
           </div>
         </b-card>
-        <!-- <cm-apexjs-apex-chart-dynamic height="280" /> -->
       </div>
     </div>
   </div>
@@ -101,7 +140,7 @@ export default {
     return {
       chartSeries1: [
         {
-          name: 'South',
+          name: 'CPU Usage %',
           data: this.generateDayWiseTimeSeries(
             new Date('11 Feb 2017 GMT').getTime(),
             20,
@@ -112,7 +151,7 @@ export default {
           ),
         },
         {
-          name: 'North',
+          name: 'Memory Usage %',
           data: this.generateDayWiseTimeSeries(
             new Date('11 Feb 2017 GMT').getTime(),
             20,
@@ -123,7 +162,18 @@ export default {
           ),
         },
         {
-          name: 'Central',
+          name: 'Array Usage(HDD Storage) %',
+          data: this.generateDayWiseTimeSeries(
+            new Date('11 Feb 2017 GMT').getTime(),
+            20,
+            {
+              min: 10,
+              max: 15,
+            }
+          ),
+        },
+        {
+          name: 'Cloud Storage Usage %',
           data: this.generateDayWiseTimeSeries(
             new Date('11 Feb 2017 GMT').getTime(),
             20,
@@ -147,7 +197,7 @@ export default {
             },
           },
         },
-        colors: ['#008FFB', '#00E396', '#f9b018'],
+        colors: ['#008FFB', '#00E396', '#f9b018', '#4dcdc4'],
         dataLabels: {
           enabled: false,
         },
@@ -178,16 +228,12 @@ export default {
 
       chartSeries2: [
         {
-          name: 'A',
+          name: 'Total Video Downloaded',
           data: [44, 55, 41, 67, 22, 43],
         },
         {
-          name: 'B',
+          name: 'Total Video Archived',
           data: [13, 23, 20, 8, 13, 27],
-        },
-        {
-          name: 'C',
-          data: [11, 17, 15, 15, 21, 14],
         },
       ],
 
@@ -248,8 +294,8 @@ export default {
           ],
         },
         legend: {
-          position: 'right',
-          offsetY: 40,
+          position: 'bottom',
+          offsetY: 10,
         },
         fill: {
           opacity: 1,
@@ -258,20 +304,12 @@ export default {
 
       chartSeries3: [
         {
-          name: 'Marine Sprite',
+          name: 'No. of Malware Detected',
           data: [44, 55, 41, 37, 22, 43, 21],
         },
         {
-          name: 'Striking Calf',
+          name: 'No. of Objects Detected',
           data: [53, 32, 33, 52, 13, 43, 32],
-        },
-        {
-          name: 'Tank Picture',
-          data: [12, 17, 11, 9, 15, 11, 20],
-        },
-        {
-          name: 'Bucket Slope',
-          data: [9, 7, 5, 8, 6, 9, 4],
         },
       ],
 
@@ -305,9 +343,6 @@ export default {
         stroke: {
           width: 2,
         },
-        title: {
-          text: 'Compare Sales Strategy',
-        },
         xaxis: {
           categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
         },
@@ -334,96 +369,70 @@ export default {
           },
         },
         legend: {
-          position: 'right',
-          offsetY: 40,
+          position: 'bottom',
+          offsetY: 10,
         },
       },
 
-      // chartSeries4A: [70],
-      chartSeries4: [76, 67, 61, 90],
+      chartSeries4A: [80],
 
-      chartOptions4: {
+      chartOptions4A: {
         chart: {
+          height: 350,
           background: '#363841',
-          height: 390,
           type: 'radialBar',
         },
+        colors: ['#008FFB'],
         theme: {
-          mode: 'dark'
+          mode: 'dark',
         },
         tooltip: {
           theme: 'dark',
         },
         plotOptions: {
           radialBar: {
-            offsetY: 15,
-            startAngle: 0,
-            endAngle: 270,
             hollow: {
-              margin: 5,
-              size: '30%',
-              background: 'transparent',
-              image: undefined,
-            },
-            dataLabels: {
-              name: {
-                show: false,
-              },
-              value: {
-                show: false,
-              },
+              size: '70%',
             },
           },
         },
-        colors: ['#4ecdc4', '#c7f463', '#39539E', '#fd6a6a'],
-        labels: ['Vimeo', 'Messenger', 'Facebook', 'LinkedIn'],
-        legend: {
-          show: true,
-          floating: true,
-          fontSize: '16px',
-          horizontalAlign: 'center', 
-          position: 'left',
-          offsetX: 40,
-          offsetY: 15,
-          labels: {
-            useSeriesColors: true,
-          },
-          markers: {
-            size: 0,
-          },
-          formatter: function (seriesName, opts) {
-            return seriesName + ':  ' + opts.w.globals.series[opts.seriesIndex]
-          },
-          itemMargin: {
-            vertical: 3,
-          },
+        labels: ['AI Accuracy'],
+      },
+
+      chartSeries4B: [60],
+
+      chartOptions4B: {
+        chart: {
+          height: 350,
+          background: '#363841',
+          type: 'radialBar',
         },
-        responsive: [
-          {
-            breakpoint: 480,
-            options: {
-              legend: {
-                show: false,
-              },
+        colors: ['#008FFB'],
+        theme: {
+          mode: 'dark',
+        },
+        tooltip: {
+          theme: 'dark',
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: '70%',
             },
           },
-        ],
+        },
+        labels: ['Cloud Stoage Usage'],
       },
 
       chartSeries5: [
         {
-          name: 'TEAM A',
-          type: 'column',
-          data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-        },
-        {
-          name: 'TEAM B',
+          name: 'Uptime',
           type: 'area',
           data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
         },
         {
-          name: 'TEAM C',
-          type: 'line',
+          name: 'Downtime',
+          type: 'area',
           data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
         },
       ],
@@ -435,9 +444,13 @@ export default {
           type: 'line',
           stacked: false,
         },
+        colors: ['#4dcdc4', '#f9b018'],
+        title: {
+          text: 'Server Uptime',
+        },
         stroke: {
           width: [0, 2, 5],
-          curve: 'smooth',
+          curve: 'straight',
         },
         theme: {
           mode: 'dark',
@@ -463,17 +476,17 @@ export default {
           },
         },
         labels: [
-          '01/01/2003',
-          '02/01/2003',
-          '03/01/2003',
-          '04/01/2003',
-          '05/01/2003',
-          '06/01/2003',
-          '07/01/2003',
-          '08/01/2003',
-          '09/01/2003',
-          '10/01/2003',
-          '11/01/2003',
+          '01/01/2022',
+          '02/01/2022',
+          '03/01/2022',
+          '04/01/2022',
+          '05/01/2022',
+          '06/01/2022',
+          '07/01/2022',
+          '08/01/2022',
+          '09/01/2022',
+          '10/01/2022',
+          '11/01/2022',
         ],
         markers: {
           size: 0,
@@ -483,7 +496,7 @@ export default {
         },
         yaxis: {
           title: {
-            text: 'Points',
+            text: 'Milliseconds',
           },
           min: 0,
         },
@@ -493,14 +506,47 @@ export default {
           y: {
             formatter: function (y) {
               if (typeof y !== 'undefined') {
-                return y.toFixed(0) + ' points'
+                return y.toFixed(0) + ' ms'
               }
               return y
             },
           },
         },
       },
+
+      statuses: [
+        {
+          title: 'Server',
+          status: 'Online',
+        },
+        {
+          title: 'Cloud',
+          status: 'Online',
+        },
+        {
+          title: 'Download Speed',
+          status: '75%',
+        },
+        {
+          title: 'Upload Speed',
+          status: '50%',
+        },
+      ],
+
+      screenSize: '',
     }
+  },
+
+  created() {
+    this.$root.$on('screen-size-changed', (screenSize) => {
+      this.screenSize = screenSize
+    })
+  },
+
+  computed: {
+    currentTime() {
+      return this.$dayjs().format('HH:mm A - MMMM DD, YYYY')
+    },
   },
 
   methods: {
@@ -523,6 +569,13 @@ export default {
 </script>
 
 <style scoped>
+.hero-card {
+  background-color: #363841;
+}
+.hero-title {
+  font-size: 24px;
+  font-weight: bold;
+}
 .card-corp {
   border-color: transparent;
   border-radius: 8px;
@@ -535,7 +588,7 @@ export default {
   background-color: #202430;
 }
 
-.widget-card-text-container {
+.widget-card-text-container, .center-text {
   display: grid;
   place-content: center;
   height: 100%;
@@ -550,5 +603,9 @@ export default {
   display: grid;
   place-content: center;
   height: 100%;
+}
+
+.widget-card-text-subtitle {
+  font-size: 14px;
 }
 </style>

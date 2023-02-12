@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{411:function(n,t,e){"use strict";e.r(t);var o={name:"IndexPage",layout:"default"},l=e(64),component=Object(l.a)(o,(function(){var n=this._self._c;return n("div",[n("co-chartjs-dashboard")],1)}),[],!1,null,null,null);t.default=component.exports;installComponents(component,{CoChartjsDashboard:e(410).default})}}]);
